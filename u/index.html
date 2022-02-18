@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ㅤ</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./assets/css/u.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/image/favicon.png" />
+    <script src="../assets/js/firebase.js" defer></script>
+    <script src="assets/js/block.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <div class="loading-wrap">
+        <div class="heart"></div>
+        <div class="back"></div>
+    </div>
+    <header>
+        <h1 id="big-header">yêu tớ không ?</h1>
+        <h2 id="medium-header">TẮT CÁI NÀY ĐI MÀ KHÔNG TRẢ LỜI SẼ PHẢI YÊU TỚ SUỐT ĐỜI ♥ =))</h2>
+    </header>
+    <div id="bg">
+        <img id="wall" src="./assets/css/bg.jpg">
+    </div>
+    <div id="overlay" class="show"></div>
+    <div class="btn-wrapper">
+        <div class="yes-container" data-ripple>
+            <button id="yes-btn">Có, tớ yêu cậu</button>
+        </div>
+        <div class="no-container">
+            <button id="no-btn">Không, tớ đéo yêu cậu</button>
+        </div>
+    </div>
+    <div class="msg">
+        <div id="closeMsg">
+            <i class="fas fa-times"></i>
+        </div>
+        <div id="header">
+            <h1 id="header-text">tớ biết mà</h1>
+            <img id="header-gif" src="./assets/image/happy/achtung.gif" />
+        </div>
+        <h4>Nếu câu trả lời hồi nãy là ép buộc thì hãy trả lời lại nhé UwU</h4>
+        <form id="f" name="f" class="input" onsubmit="submitForm(event)">
+            <input type="text" name="txt" id="message" autocomplete="off" placeholder="Nhập vào đây nè ..."
+                spellcheck="false" onkeydown="typing()">
+            <button id="send-btn" type="button" data-ripple=""><i class="fad fa-paper-plane"></i></button>
+        </form>
+    </div>
+    <div class="intro-wrap hide">
+        <div class="intro-content">
+            <div id="cute-img">
+                <img src="./assets/image/kat/1.jpg" alt="">
+            </div>
+            <hr>
+            <h1>Cậu trả lời tớ câu này nhé</h1>
+            <button id="ok-btn" data-ripple>Okokok</button>
+        </div>
+    </div>
+    <div class="log"></div>
+    <div class="end">
+        <img src="" alt="" id="end-gif">
+        <h1 id="end-text" disabled>Tớ yêu cậu nhiều lắm. Dù sau này có như thế nào hãy luôn bên tớ và yêu tớ như thế
+            này, cậu
+            nhé!</h1>
+    </div>
+    <div id="info-btn">
+        <i class="fad fa-question-circle"></i>
+    </div>
+    <div class="info-wrap">
+        <p>Made with ❤️ by <a href="http://fb.com/pmint05" target="_blank" rel="noopener noreferrer"
+                id="link">rhinzo</a></p>
+        <p>Hope you find your other half 🍀</p>
+        <hr>
+        <p>Want to create your own?</p>
+        <p>👉 Visit <a href="http://pmint05.github.io/lov3" id="link">lov3</a> 👈</p>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/u.js" defer></script>
+</body>
+
+</html>

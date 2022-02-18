@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="./assets/image/favicon.png" />
+    <link rel="image_src" type="image/jpeg" href="./assets/image/thumbnail.jpg" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/block.js" defer></script>
+    <script src="assets/js/firebase.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <title>Lov3.</title>
+    <meta property="og:url" content="https://pmint05.github.io/lov3" />
+    <meta property="og:title" content="Lov3." />
+    <meta property="og:description" content="Hỏi nhau những câu hỏi" />
+    <meta property="article:author" content="https://pmint05.github.io/" />
+    <meta name="AUTHOR" content="Rhinzo" />
+    <meta name="COPYRIGHT" content="Copyright (C) 2021 @Pmint05" />
+    <meta name="RATING" content="GENERAL" />
+</head>
+
+<body>
+    <div class="dropdown__select">
+        <!-- <i class="fad fa-caret-down dropdown__caret"></i> -->
+        <ion-icon name="chevron-down-outline" class="dropdown__caret"></ion-icon>
+    </div>
+    <div class="dropdown">
+        <ul class="dropdown__list">
+            <li class="dropdown__item" id="home__btn" data-ripple="">
+                <ion-icon name="home-outline" class="dropdown__icon"></ion-icon>
+                <span class="dropdown__text">Home</span>
+            </li>
+            <li class="dropdown__item" id="about__btn" data-ripple="">
+                <ion-icon name="help-circle-outline" class="dropdown__icon"></ion-icon>
+                <span class="dropdown__text">About</span>
+            </li>
+            <li class="dropdown__item" id="create__btn" data-ripple=""="">
+                <ion-icon name="add-circle-outline" class="dropdown__icon"></ion-icon>
+                <span class="dropdown__text">Create</span>
+            </li>
+        </ul>
+    </div>
+    <div class="loading-wrap">
+        <!-- <div class="dots-loading">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div> -->
+        <span class="loading-text">
+            Loading
+        </span>
+
+        <div class="scaling-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="section">
+        <section id="home">
+            <div class="home__container">
+                <div class="home__title">
+                    <h1>Lov3<pink>.</pink>
+                    </h1>
+                    <p>A place to share your love</p>
+                </div>
+
+                <div class="home__btn-container">
+                    <button class="home__btn" data-ripple="">
+                        <ion-icon name="arrow-forward-outline" class="home__btn-icon"></ion-icon>
+                        <span class="home__btn-text">Share now!</span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="home__bg">
+                <div class="overlay"></div>
+                <img src="./assets/image/bg.jpg" alt="bg" srcset="">
+            </div>
+        </section>
+        <section id="about">
+            <div class="about__container">
+                <div class="about__title">
+                    <h1>About<pink>.</pink>
+                    </h1>
+                    <p>
+                        <pink>Lov3</pink> is a web application that helps you confess to someone you love.<br>Just press
+                        the create button, you will have a cute website to send to your crush.
+                    </p>
+                    <hr>
+                    <div class="demo">
+                        Check out the demo
+                        <span class="link">
+                            👉 <a href="https://pmint05.github.io/lov3/demo/" target="_blank"
+                                rel="noopener noreferrer">here</a>
+                            👈
+                        </span>
+                    </div>
+                </div>
+                <span id="author">Code by <a href="http://fb.com/pmint05" target="_blank"
+                        rel="noopener noreferrer"><strong>pmint05</strong></a> with ❤️</span>
+                <div class="social__media">
+                    <a href="https://instagram.com/pmint05" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://fb.com/pmint05" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://pmint05.github.io" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="earth-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <span id="copyright">©️ <pink>2022</pink> All Rights Reserved</span>
+            <div id="back__text">
+                <h1 id="back__text__fill">Rhinzo</h1>
+                <div id="back__text__alt">
+                    <h1>Rhinzo</h1>
+                    <h1>Rhinzo</h1>
+                    <h1>Rhinzo</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="creator">
+        <div id="creating__progress"></div>
+        <div id="creating__progress__alt"></div>
+        <div class="final__wrapper">
+            <ion-icon name="close-outline" id="final__close"></ion-icon>
+            <h1 class="final__head">TẠO THÀNH CÔNG ✅</h1>
+            <p class="final__text">
+                Click link bên dưới để copy và gửi cho crush của bạn 😉
+            </p>
+            <doneLink>https://pmint05.github.io/lov3/u/?q=177001225</doneLink>
+            <a id="final__preview" href="http://pmint05.github.io/lov3/u/?q=177001225" target="_blank"
+                rel="noopener noreferrer">👉Xem thử
+                nào!!!👈</a>
+            <div class="copied__notify">
+                Đã copy!
+            </div>
+        </div>
+        <div class="progress">
+            <p class="progress__text">00%</p>
+            <div class="progress__bar">
+                <div class="progress__bar-fill"></div>
+            </div>
+        </div>
+        <div class="page__container">
+            <div id="closePageBtn">
+                <ion-icon name="close-outline" id="closePageIcon"></ion-icon>
+            </div>
+            <div id="usageBtn">
+                <ion-icon name="help-circle-outline" id="usageIcon"></ion-icon>
+                <div class="usage">
+                    Trừ những phần có dấu sao (*), tất cả các phần còn lại đều có thể bỏ trống.
+                </div>
+            </div>
+            <div class="page-1 page">
+                <div class="intro-content">
+                    <div id="cute-img">
+                        <!-- <img src="./u/assets/image/cute kat/1.jpg" alt=""> -->
+                        <img src="" alt="" id="preview__introImage">
+                        <div id="intro__imageInput">
+                            <ion-icon name="cloud-upload-outline" id="upload__icon"></ion-icon>
+                            <span>Max file size: 500kB</span>
+                        </div>
+                        <div id="intro__imageName">Upload 1 chiếc ảnh cute ở đây</div>
+                        <input type="file" name="intro__image" id="intro__image" hidden accept="image/png, image/jpeg">
+                        <div id="closeImageBtn">
+                            <ion-icon name="close-outline" id="closeImageIcon"></ion-icon>
+                        </div>
+                    </div>
+                    <textarea name="intro" id="intro__text" cols="30" rows="5" spellcheck="false"
+                        placeholder="Lời nhắn mở đầu ..."></textarea>
+                    <!-- <input type="text" autocomplete="off" spellcheck="false" value="Cậu trả lời tớ câu này nhé"></input>
+					<input type="text" autocomplete="off" spellcheck="false" value="Trả lời cho thật lòng đó nha UwU"></input> -->
+                    <button id="ok-btn"><input type="text" id="intro-btn" value="" spellcheck="false"
+                            placeholder="Nút tiếp tục..." maxlength="20"></button>
+                </div>
+            </div>
+            <div class="page-2 page">
+                <div id="create-head">
+                    <input type="text" id="big-header" autocomplete="off" spellcheck="false" value=""
+                        placeholder="Hỏi 1 câu gì đó ở đây *" maxlength="70"></input>
+                    <input type="text" id="medium-header" value="" placeholder="Để lại lời đe dọa cute nào đó ở đây"
+                        spellcheck="false" autocomplete="off" maxlength="70"></input>
+                </div>
+
+                <div id="btn-wrapper">
+                    <div id="yes-container">
+                        <button id="yes-btn"><input type="text" id="yes-inp" value="" spellcheck="false"
+                                placeholder="Nút đồng ý ở đây *" maxlength="20"></button>
+                    </div>
+                    <div id="no-container">
+                        <button id="no-btn" disabled><input type="text" id="no-inp" placeholder="Nút từ chối ở đây *"
+                                spellcheck="false" value="" maxlength="20"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="page-3 page">
+                <div class="msg">
+                    <div id="header">
+                        <input type="text" id="header-text" value="" autocomplete="off" spellcheck="false"
+                            placeholder="Viết gì đó thật ngầu ở đây" maxlength="70"></input>
+                        <img id="header-gif" src="./u/assets/image/happy/achtung.gif" />
+                    </div>
+                    <input type="text" value="" spellcheck="false"
+                        placeholder="Dặn dò gì đo trước khi bạn ấy viết câu trả lời" id="some-text"
+                        maxlength="70"></input>
+                    <form id="f" name="f" class="input-form">
+                        <input type="text" name="txt" id="message" autocomplete="off"
+                            placeholder="Câu trả lời của người ấy ... *" spellcheck="false">
+                        <button id="send-btn" type="button" disabled><i class="fad fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="page-4 page">
+                <div class="end">
+                    <!-- <img src="u/assets/image/happy/capoo2.gif" alt="" id="end-gif"> -->
+                    <div id="end-img">
+                        <!-- <img src="./u/assets/image/cute kat/1.jpg" alt=""> -->
+                        <img src="" alt="" id="preview__endImage">
+                        <div id="end__imageInput">
+                            <ion-icon name="cloud-upload-outline" id="upload__icon__end"></ion-icon>
+                            <span>Max file size: 500kB</span>
+                        </div>
+                        <div id="end__imageName">Upload 1 chiếc ảnh cute nữa ở đây</div>
+                        <input type="file" name="end__image" id="end__image" hidden accept="image/png, image/jpeg">
+                        <div id="closeEndImageBtn">
+                            <ion-icon name="close-outline" id="closeEndImageIcon"></ion-icon>
+                        </div>
+                    </div>
+                    <textarea type="text" id="end-text" value="" spellcheck="false" placeholder="Câu tỏ tình ở đây *"
+                        cols="30" rows="5"></textarea>
+                </div>
+                <div class="done">
+                    <button id="done-btn" data-ripple="">
+                        <span id="button__text">Tạo ngay!</span>
+                    </button>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)" data-ripple="">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+            <a class="next" onclick="plusSlides(1)" data-ripple="">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <div class="dot__container">
+                <span class="dot" onclick="currentSlide(1)" data-ripple=""></span>
+                <span class="dot" onclick="currentSlide(2)" data-ripple=""></span>
+                <span class="dot" onclick="currentSlide(3)" data-ripple=""></span>
+                <span class="dot" onclick="currentSlide(4)" data-ripple=""></span>
+            </div>
+
+            <div id="bg">
+                <img id="wall" src="./assets/css/bg.jpg">
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
