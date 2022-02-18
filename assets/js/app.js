@@ -257,7 +257,6 @@ let validate = () => {
 };
 
 doneBtn.onclick = () => {
-	id = caiNayDeoTheThayDoi;
 	if (validate()) {
 		$("#button__text").text("Đang tạo...");
 		doneBtn.classList.add("active");
