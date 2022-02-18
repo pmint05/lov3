@@ -378,44 +378,6 @@ let gotAllData = async () => {
 		$("#button__text").text("Tạo ngay!");
 	}, 500);
 };
-// let loading = (progress, isFake) => {
-// 	// console.log(progress);
-// 	$(".progress").addClass("show");
-// 	if (!isFake) {
-// 		// $(".progress__text").text(Math.round(currentProgress) + "%");
-// 		// $(".progress__bar-fill").css(
-// 		// 	"transform",
-// 		// 	"translateX(" + "-" + (100 - currentProgress) + "%)"
-// 		// );
-// 		// if (currentProgress == "100") {
-// 		// 	$(".progress__text").text("Done!");
-// 		// 	setTimeout(() => {
-// 		// 		$(".progress").removeClass("show");
-// 		// 		gotAllData();
-// 		// 	}, 1000);
-// 		// }
-// 	}
-// 	if (isFake) {
-// 		let percent = 0;
-// 		let fake = setInterval(() => {
-// 			percent += Math.floor(Math.random() * 10);
-// 			if (percent >= 100) {
-// 				percent = 100;
-// 				$(".progress__text").text("Done!");
-// 				setTimeout(() => {
-// 					$(".progress").removeClass("show");
-// 					gotAllData();
-// 				}, 1000);
-// 				clearInterval(fake);
-// 			}
-// 			$(".progress__text").text(Math.round(percent) + "%");
-// 			$(".progress__bar-fill").css(
-// 				"transform",
-// 				"translateX(" + "-" + (100 - percent) + "%)"
-// 			);
-// 		}, 100);
-// 	}
-// };
 function isFileImage(file) {
 	return file && file["type"].split("/")[0] === "image";
 }
