@@ -3,6 +3,7 @@ const dropdownMenu = document.querySelector(".dropdown"),
 	dropdownList = document.querySelector(".dropdown__list"),
 	homeBtn = document.querySelector("#home__btn"),
 	aboutBtn = document.querySelector("#about__btn"),
+	feedbackBtn = document.querySelector("#feedback__btn"),
 	createBtn = document.querySelector("#create__btn"),
 	//Intro Image
 	uploadButton = document.getElementById("upload__icon"),
@@ -25,7 +26,9 @@ const dropdownMenu = document.querySelector(".dropdown"),
 	finalWrapper = document.querySelector(".final__wrapper"),
 	finalCloseBtn = document.querySelector("#final__close"),
 	doneLink = document.querySelector("doneLink"),
-	finalPreview = document.querySelector("#final__preview");
+	finalPreview = document.querySelector("#final__preview"),
+	nextBtn = document.querySelector(".next__btn"),
+	backBtn = document.querySelector(".back__btn");
 
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 let input = document.querySelectorAll("input[type=text]");
@@ -34,6 +37,12 @@ let file;
 let fileEnd;
 // const randomString = Math.random().toString(36).slice(2);
 // const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match;
+nextBtn.onclick = () => {
+	$("#feedback__content").addClass("show");
+};
+backBtn.onclick = () => {
+	$("#feedback__content").removeClass("show");
+};
 
 input.forEach((input) => {
 	input.onclick = () => {
@@ -171,10 +180,23 @@ aboutBtn.onclick = () => {
 	dropdownMenu.classList.remove("show");
 	dropdownSelect.classList.remove("active");
 };
+feedbackBtn.onclick = () => {
+	document.body.classList.toggle("lock");
+	window.scroll({
+		top: $("#feedback").offset().top,
+		left: 0,
+		behavior: "smooth",
+	});
+	dropdownMenu.classList.remove("show");
+	dropdownSelect.classList.remove("active");
+};
 $("#home").click(() => {
 	reset();
 });
 $("#about").click(() => {
+	reset();
+});
+$("#feedback").click(() => {
 	reset();
 });
 let reset = () => {
@@ -363,6 +385,7 @@ let gotAllData = async () => {
 		some__text: $("#some-text").val() || "",
 		end__text: $("#end-text").val(),
 		message: $("#message").val(),
+		time: getCrrDate(),
 	};
 
 	// console.log(data);
@@ -435,6 +458,73 @@ let handleTouchMove = (evt) => {
 	xDown = null;
 	yDown = null;
 };
+$("#star-1").change(() => {
+	$(".status").text("Terrible");
+	$(".active").removeClass("active");
+	$(".terrible").addClass("active");
+});
+$("#star-2").change(() => {
+	$(".status").text("Bad");
+	$(".active").removeClass("active");
+	$(".bad").addClass("active");
+});
+$("#star-3").change(() => {
+	$(".status").text("Good");
+	$(".active").removeClass("active");
+	$(".good").addClass("active");
+});
+$("#star-4").change(() => {
+	$(".status").text("Great");
+	$(".active").removeClass("active");
+	$(".great").addClass("active");
+});
+$("#star-5").change(() => {
+	$(".status").text("Amazing");
+	$(".active").removeClass("active");
+	$(".amazing").addClass("active");
+});
+function resetForm(selector) {
+	let form = document.querySelector(selector);
+	if (form) {
+		let inputs = form.querySelectorAll("[name][rules]");
+		let textarea = form.querySelector("TEXTAREA");
+		textarea.value = "";
+		for (let input of inputs) {
+			input.value = "";
+			if (input.type === "checkbox") {
+				input.checked = false;
+			}
+		}
+	}
+	$("#star-3").attr("checked", true);
+	$(".status").text("Good");
+	$(".active").removeClass("active");
+	$(".good").addClass("active");
+}
+function submitData(data) {
+	data = {
+		...data,
+		rate: $("input[type='radio']:checked").val(),
+		time: getCrrDate(),
+	};
+	db.collection("feedBack").doc(`${fbId}`).set(data);
+	realtimeDB.child("id").set(++id);
+}
+let getCrrDate = () => {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1;
+	var yyyy = today.getFullYear();
+	if (dd < 10) {
+		dd = "0" + dd;
+	}
+	if (mm < 10) {
+		mm = "0" + mm;
+	}
+	var today = dd + "/" + mm + "/" + yyyy;
+	return today;
+};
+
 jQuery(function ($) {
 	// MAD-RIPPLE // (jQ+CSS)
 	$(document).on("mousedown", "[data-ripple]", function (e) {

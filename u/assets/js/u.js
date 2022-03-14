@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		window.location.href = "../";
 	}
 	const id = req.q;
-	history.pushState(null, "", location.href.split("?")[0]);
+	// history.pushState(null, "", location.href.split("?")[0]);
 	db.collection("u")
 		.doc(`${id}`)
 		.get()

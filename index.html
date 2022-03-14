@@ -42,18 +42,17 @@
                 <ion-icon name="help-circle-outline" class="dropdown__icon"></ion-icon>
                 <span class="dropdown__text">About</span>
             </li>
-            <li class="dropdown__item" id="create__btn" data-ripple=""="">
+            <li class="dropdown__item" id="feedback__btn" data-ripple="">
+                <ion-icon name="chatbox-ellipses-outline" class="dropdown__icon"></ion-icon>
+                <span class="dropdown__text">Feedback</span>
+            </li>
+            <li class="dropdown__item" id="create__btn" data-ripple="">
                 <ion-icon name="add-circle-outline" class="dropdown__icon"></ion-icon>
                 <span class="dropdown__text">Create</span>
             </li>
         </ul>
     </div>
     <div class="loading-wrap">
-        <!-- <div class="dots-loading">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div> -->
         <span class="loading-text">
             Loading
         </span>
@@ -74,7 +73,6 @@
                     </h1>
                     <p>A place to share your love</p>
                 </div>
-
                 <div class="home__btn-container">
                     <button class="home__btn" data-ripple="">
                         <ion-icon name="arrow-forward-outline" class="home__btn-icon"></ion-icon>
@@ -107,21 +105,7 @@
                         </span>
                     </div>
                 </div>
-                <span id="author">Code by <a href="http://fb.com/pmint05" target="_blank"
-                        rel="noopener noreferrer"><strong>pmint05</strong></a> with ❤️</span>
-                <div class="social__media">
-                    <a href="https://instagram.com/pmint05" target="_blank" rel="noopener noreferrer">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                    <a href="https://fb.com/pmint05" target="_blank" rel="noopener noreferrer">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-                    <a href="https://pmint05.github.io" target="_blank" rel="noopener noreferrer">
-                        <ion-icon name="earth-outline"></ion-icon>
-                    </a>
-                </div>
             </div>
-            <span id="copyright">©️ <pink>2022</pink> All Rights Reserved</span>
             <div id="back__text">
                 <h1 id="back__text__fill">Rhinzo</h1>
                 <div id="back__text__alt">
@@ -130,6 +114,144 @@
                     <h1>Rhinzo</h1>
                 </div>
             </div>
+            </section>
+            <section id="feedback">
+                <div id="feedback_title">
+                    Feedback<pink>.</pink>
+                    <p>What do you think about this web app?</p>
+                </div>
+                <div id="feedback__content">
+                    <form action="" id="feedback__form">
+                        <span id="form__header">
+                            Let me know!
+                        </span>
+                        <div class="feedback__input-container">
+                            <div class="feedback__name form-group">
+                                <div class="input">
+                                    <input rules="required" type="text" name="name" id="feedback__name" placeholder=" ">
+                                    <label for="name">Your name</label>
+                                </div>
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="feedback__email form-group">
+                                <div class="input">
+                                    <input rules="required|email" type="email" name="email" id="feedback__email" placeholder=" ">
+                                    <label for="email">Your email</label>
+                                </div>
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+            
+                        <div class="feedback__message form-group">
+                            <textarea rules="required" name="message" id="feedback__message" placeholder="Your message"
+                                spellcheck="false"></textarea>
+                            <span class="form-message"></span>
+                        </div>
+                        <button type="submit" id="feedback__submit" data-ripple="">Send</button>
+                    </form>
+                    <div id="author__container">
+                        <div id="feedback__icons">
+                            <h1>Rate me!</h1>
+                            <div class="emoji__container">
+                                <li class="emoji terrible">
+                                    <img src="assets/image/emoji/terrible.png" alt="" srcset="">
+                                </li>
+                                <li class="emoji bad">
+                                    <img src="assets/image/emoji/bad.png" alt="" srcset="">
+                                </li>
+                                <li class="emoji good active">
+                                    <img src="assets/image/emoji/good.png" alt="" srcset="">
+                                </li>
+                                <li class="emoji great">
+                                    <img src="assets/image/emoji/great.png" alt="" srcset="">
+                                </li>
+                                <li class="emoji amazing">
+                                    <img src="assets/image/emoji/amazing.png" alt="" srcset="">
+                                </li>
+                            </div>
+                            <span class="status">Good</span>
+                            <div id="feedback__stars">
+                                <input type="radio" name="rate" id="star-1" value="1" hidden>
+                                <input type="radio" name="rate" id="star-2" value="2" hidden>
+                                <input type="radio" name="rate" id="star-3" value="3" hidden checked>
+                                <input type="radio" name="rate" id="star-4" value="4" hidden>
+                                <input type="radio" name="rate" id="star-5" value="5" hidden>
+                                <div class="stars">
+                                    <label for="star-1">
+                                        <ion-icon name="star" class="star__icon star-1"></ion-icon>
+                                    </label>
+                                    <label for="star-2">
+                                        <ion-icon name="star" class="star__icon star-2"></ion-icon>
+                                    </label>
+                                    <label for="star-3">
+                                        <ion-icon name="star" class="star__icon star-3"></ion-icon>
+                                    </label>
+                                    <label for="star-4">
+                                        <ion-icon name="star" class="star__icon star-4"></ion-icon>
+                                    </label>
+                                    <label for="star-5">
+                                        <ion-icon name="star" class="star__icon star-5"></ion-icon>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="author">Code by <strong>pmint05</strong> with ❤️</span>
+                        <div class="contact">
+                            Connect with me
+                            <div class="social__media">
+                                <a href="https://instagram.com/pmint05" target="_blank" rel="noopener noreferrer">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                                <a href="https://fb.com/pmint05" target="_blank" rel="noopener noreferrer">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                                <a href="https://pmint05.github.io" target="_blank" rel="noopener noreferrer">
+                                    <ion-icon name="earth-outline"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback__btns">
+                        <div class="feedback__btn back__btn">
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </div>
+                        <div class="feedback__btn next__btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="line__wrapper">
+                    
+                        <svg class="line" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 400">
+                            <path
+                                d="M85.65022277832031,229.59640502929688C101.09865203857422,215.09864952087403,127.30940979003907,160.6277995300293,143.94618225097656,174.8878936767578C160.58295471191406,189.14798782348632,116.10762504577636,306.93722911834715,148.4304962158203,283.4080810546875C180.75336738586427,259.87893299102785,233.12107902526856,68.51121353149414,265.9192810058594,86.0986557006836C298.7174829864502,103.68609786987305,237.0224118041992,367.12556361198426,272.1972961425781,349.7757873535156C307.372180480957,332.426011095047,363.00446228027346,10.88340705871582,398.6546936035156,20.6278018951416C434.3049249267578,30.372196731567385,374.4035957336426,355.4125591373444,406.7264709472656,386.5470886230469C439.04934616088866,417.6816181087494,485.92826217651367,158.55605178833008,520.6278076171875,138.11659240722656C555.3273530578613,117.67713302612304,515.80267578125,296.1076368713379,537.6681518554688,309.41705322265625C559.5336279296876,322.7264695739746,580.5605657958985,200.4618862915039,603.1390380859375,188.34080505371094C625.7175103759765,176.21972381591797,605.0448345947266,256.7847463989258,622.8699340820312,263.6771240234375C640.6950335693359,270.5695016479492,657.8071524047851,227.42152412414552,670.403564453125,214.3497772216797"
+                                fill="none" stroke-width="30" stroke="url(&quot;#SvgjsLinearGradient1004&quot;)" stroke-linecap="round"
+                                transform="matrix(0.9025,0,0,0.9025,58.83072162628173,15.817522926330582)" stroke-opacity="1"
+                                stroke-dasharray="0 0"></path>
+                            <defs>
+                                <linearGradient id="SvgjsLinearGradient1004" gradientTransform="rotate(0, 0.5, 0.5)">
+                                    <stop stop-color="hsl(37, 99%, 67%)" offset="0"></stop>
+                                    <stop stop-color="hsl(316, 73%, 52%)" offset="1"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <svg class="line" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 400">
+                            <path
+                                d="M85.65022277832031,229.59640502929688C101.09865203857422,215.09864952087403,127.30940979003907,160.6277995300293,143.94618225097656,174.8878936767578C160.58295471191406,189.14798782348632,116.10762504577636,306.93722911834715,148.4304962158203,283.4080810546875C180.75336738586427,259.87893299102785,233.12107902526856,68.51121353149414,265.9192810058594,86.0986557006836C298.7174829864502,103.68609786987305,237.0224118041992,367.12556361198426,272.1972961425781,349.7757873535156C307.372180480957,332.426011095047,363.00446228027346,10.88340705871582,398.6546936035156,20.6278018951416C434.3049249267578,30.372196731567385,374.4035957336426,355.4125591373444,406.7264709472656,386.5470886230469C439.04934616088866,417.6816181087494,485.92826217651367,158.55605178833008,520.6278076171875,138.11659240722656C555.3273530578613,117.67713302612304,515.80267578125,296.1076368713379,537.6681518554688,309.41705322265625C559.5336279296876,322.7264695739746,580.5605657958985,200.4618862915039,603.1390380859375,188.34080505371094C625.7175103759765,176.21972381591797,605.0448345947266,256.7847463989258,622.8699340820312,263.6771240234375C640.6950335693359,270.5695016479492,657.8071524047851,227.42152412414552,670.403564453125,214.3497772216797"
+                                fill="none" stroke-width="30" stroke="url(&quot;#SvgjsLinearGradient1004&quot;)" stroke-linecap="round"
+                                transform="matrix(0.9025,0,0,0.9025,58.83072162628173,15.817522926330582)" stroke-opacity="1"
+                                stroke-dasharray="0 0"></path>
+                            <defs>
+                                <linearGradient id="SvgjsLinearGradient1004" gradientTransform="rotate(0, 0.5, 0.5)">
+                                    <stop stop-color="hsl(37, 99%, 67%)" offset="0"></stop>
+                                    <stop stop-color="hsl(316, 73%, 52%)" offset="1"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span id="copyright">©️ <pink>2022</pink> All Rights Reserved</span>
         </section>
     </div>
     <div class="creator">
@@ -269,6 +391,17 @@
     </div>
     </div>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/validator_v2.js"></script>
+    <script>
+        Validator("#feedback__form", {
+            formGroupSelector: ".form-group",
+            errorSelector: ".form-message",
+            onsubmit: (data) => {
+                submitData(data);
+                resetForm("#feedback__form");
+            }
+        })
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -3,6 +3,7 @@ let db;
 let realtimeDB;
 let storageRef;
 let id;
+let fbId;
 const firebaseConfig = {
 	apiKey: "AIzaSyDEEQ5AfU_jTHRpPKaZGJ7Av7WgoiJ9fhU",
 	authDomain: "pmint05-lov3.firebaseapp.com",
@@ -21,10 +22,12 @@ if (!hasInit) {
 	storageRef = firebase.storage().ref();
 	hasInit = true;
 	realtimeDB
-
 		.child("id")
 		.get()
 		.then((snapshot) => {
 			id = snapshot.val();
 		});
+	realtimeDB.child("fbId").on("value", (snapshot) => {
+		fbId = snapshot.val();
+	});
 }
