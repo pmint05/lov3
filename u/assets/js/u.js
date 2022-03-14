@@ -198,7 +198,7 @@ let gotData = (data) => {
 	$(".msg h4").html(data.some__text);
 	$("#end-text").html(data.end__text);
 	$(".intro-wrap h1").html(data.intro__text);
-	okBtn.textContent = data.intro__btn;
+	okBtn.textContent = data.intro__btn || "OK";
 	text = data.message;
 	document.title = data.big__header;
 

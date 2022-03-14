@@ -55,6 +55,15 @@ textArea.forEach((textArea) => {
 	};
 });
 let showModal = () => {
+	if (!hasInit) {
+		hasInit = true;
+		realtimeDB
+			.child("id")
+			.get()
+			.then((snapshot) => {
+				id = snapshot.val();
+			});
+	}
 	loadingWrap.classList.add("show");
 	setTimeout(() => {
 		loadingWrap.classList.remove("show");
@@ -502,26 +511,42 @@ function resetForm(selector) {
 	$(".good").addClass("active");
 }
 function submitData(data) {
+	$("#feedback__done").addClass("show");
+	setTimeout(() => {
+		$("#feedback__done").removeClass("show");
+	}, 1000);
 	data = {
 		...data,
 		rate: $("input[type='radio']:checked").val(),
 		time: getCrrDate(),
 	};
 	db.collection("feedBack").doc(`${fbId}`).set(data);
-	realtimeDB.child("id").set(++id);
+	realtimeDB.child("fbId").set(++fbId);
 }
 let getCrrDate = () => {
 	var today = new Date();
 	var dd = today.getDate();
 	var mm = today.getMonth() + 1;
-	var yyyy = today.getFullYear();
+    var yyyy = today.getFullYear();
+    var hh = today.getHours();
+    var min = today.getMinutes();
+    var sec = today.getSeconds();
 	if (dd < 10) {
 		dd = "0" + dd;
 	}
 	if (mm < 10) {
 		mm = "0" + mm;
-	}
-	var today = dd + "/" + mm + "/" + yyyy;
+    }
+    if (hh < 10) {
+        hh = "0" + hh;
+    }
+    if (min < 10) {
+        min = "0" + min;
+    }
+    if (sec < 10) {
+        sec = "0" + sec;
+    }
+    today = dd + "/" + mm + "/" + yyyy + " " + hh + ":" + min + ":" + sec;
 	return today;
 };
 
