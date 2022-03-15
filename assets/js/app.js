@@ -276,11 +276,11 @@ if (document.documentElement.clientWidth <= 500) {
 }
 let validate = () => {
 	if (
-		$("#big-header").val() != "" &&
-		$("#message").val() != "" &&
-		$("#end-text").val() != "" &&
-		$("#yes-inp").val() != "" &&
-		$("#no-inp").val() != ""
+		$("#big-header").val().trim() != "" &&
+		$("#message").val().trim() != "" &&
+		$("#end-text").val().trim() != "" &&
+		$("#yes-inp").val().trim() != "" &&
+		$("#no-inp").val().trim() != ""
 	) {
 		return true;
 	}
