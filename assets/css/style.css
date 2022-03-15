@@ -1854,6 +1854,9 @@ doneLink {
 	#feedback__content.show .next__btn {
 		visibility: hidden;
 	}
+	.contact {
+		z-index: 99;
+	}
 	.feedback__btns {
 		position: absolute;
 		width: 100%;
