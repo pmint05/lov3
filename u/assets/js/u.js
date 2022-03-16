@@ -215,7 +215,12 @@ let gotData = (data) => {
 	}
 	if (data.intro__img) {
 		$("#cute-img img").attr("src", data.intro__img);
+        $("meta[property=og\\:image]").attr("content", data.intro__img);
 	} else {
+        $("meta[property=og\\:image]").attr(
+            "content",
+            "./assets/image/thumbnail.jpg"
+        );
 		$("#cute-img").css("display", "none");
 	}
 	if (data.medium__header == "") {
