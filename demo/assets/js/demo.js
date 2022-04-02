@@ -11,8 +11,6 @@ const headerText = document.querySelector("#header-text");
 const bigHeader = document.querySelector("#big-header");
 const mediumHeader = document.querySelector("#medium-header");
 const endWrapper = document.querySelector(".end");
-const infoBtn = document.querySelector("#info-btn");
-const infoWrap = document.querySelector(".info-wrap");
 
 document.addEventListener("DOMContentLoaded", () => {
 	setTimeout(() => {
@@ -24,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 			overlay.classList.remove("hide");
 		});
-		$(".intro-wrap").removeClass("hide");
-		infoBtn.classList.add("show");
 	}, 2000);
 });
 let text = "Không ép buộc gì cả, tớ yêu cậu nhất vũ trụ luôn ❤❤❤❤❤";
@@ -69,14 +65,6 @@ function Yeu() {
 		confirmed();
 	}
 }
-infoBtn.addEventListener("click", () => {
-	infoWrap.classList.toggle("show");
-	if (infoWrap.classList.contains("show")) {
-		infoBtn.innerHTML = "<i class='fad fa-times'></i>";
-	} else {
-		infoBtn.innerHTML = "<i class='fad fa-question-circle'></i>";
-	}
-});
 function confirmed() {
 	endWrapper.classList.add("show");
 }

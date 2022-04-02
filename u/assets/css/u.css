@@ -489,7 +489,6 @@ input {
 	align-items: center;
 	cursor: pointer;
 	color: #e72757;
-	/* filter: brightness(0.5); */
 	z-index: 999999;
 	opacity: 0;
 	visibility: hidden;
@@ -506,6 +505,7 @@ input {
 #info-btn i {
 	font-size: 2rem;
 	border-radius: 50%;
+    position: relative;
 }
 .info-wrap {
 	display: flex;

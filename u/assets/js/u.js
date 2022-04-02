@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (isEmpty(req) || req.length > 1) {
 		// window.location.href = "../index.html";
 		window.location.href = "../";
+		return;
 	}
 	const id = req.q;
 	// history.pushState(null, "", location.href.split("?")[0]);
