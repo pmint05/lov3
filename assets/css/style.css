@@ -89,7 +89,7 @@ textarea {
 }
 
 textarea {
-	border: dashed 2px #dd457870;
+	border: solid 2px var(--primary);
 }
 input[type="text"]::placeholder,
 textarea::placeholder {
@@ -676,9 +676,6 @@ section {
 	padding: 1rem;
 	color: #fff;
 	transition: 0.2s ease-in-out;
-}
-#feedback__message:not(:placeholder-shown) {
-	border-color: var(--primary);
 }
 #feedback__message::placeholder {
 	color: #fff;
